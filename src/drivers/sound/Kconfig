@@ -1,0 +1,83 @@
+##
+## Copyright 2013 Google Inc.  All rights reserved.
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; version 2 of the License.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+
+config DRIVER_SOUND_GPIO_I2S
+	bool "I2S driver based on bit-bang GPIO"
+	default n
+
+config DRIVER_SOUND_GPIO_PDM
+	bool "PDM driver based on bit-bang GPIO"
+	default n
+
+config DRIVER_SOUND_GPIO_BUZZER
+	bool "A buzzer controlled by gpio value"
+	default n
+
+config DRIVER_SOUND_GPIO_EDGE_BUZZER
+	bool "A buzzer that is gpio edge triggered"
+	default n
+
+config DRIVER_SOUND_HDA
+	bool "HDA codec driver"
+	default n
+
+config DRIVER_SOUND_I2S
+	bool "Generic I2S sound support"
+	default n
+
+config DRIVER_SOUND_IPQ806X
+	bool "IPQ806x sound driver"
+	default n
+
+config DRIVER_SOUND_MAX98090
+	bool "MAX98090 codec driver"
+	default n
+
+config DRIVER_SOUND_MAX98095
+	bool "MAX98095 codec driver"
+	default n
+
+config DRIVER_SOUND_MAX98357A
+	bool "MAX98357A codec driver"
+	default n
+
+config DRIVER_SOUND_MAX98373
+	bool "MAX98373 codec driver"
+	default n
+
+config DRIVER_SOUND_MAX98927
+	bool "MAX98927 codec driver"
+	default n
+
+config DRIVER_SOUND_PCAT_BEEP
+	bool "Legacy PC AT beep driver"
+	default n
+
+config DRIVER_SOUND_RT5645
+	bool "RT5645 codec driver"
+	default n
+
+config DRIVER_SOUND_RT5677
+	bool "RT5677 codec driver"
+	default n
+
+config DRIVER_SOUND_ROUTE
+	bool "Sound route container"
+	default n
+
+config DRIVER_SOUND_SSM4567
+	bool "Analog Devices SSM4567 codec driver"
+	default n
+
+config DRIVER_SOUND_TEGRA_AUDIO_HUB
+	bool "Tegra Audio Hub driver"
+	default n

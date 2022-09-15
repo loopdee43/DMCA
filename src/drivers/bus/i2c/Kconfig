@@ -1,0 +1,63 @@
+##
+## Copyright 2013 Google Inc.  All rights reserved.
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; version 2 of the License.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+
+config DRIVER_BUS_I2C_S3C24X0
+	bool "Exynos S3C24X0 I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_EXYNOS5_USI
+	bool "Exynos USI based I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_TEGRA
+	bool "Tegra I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_DESIGNWARE
+	bool "Designware I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_DESIGNWARE_PCI
+	bool "Designware I2C driver for PCI device"
+	default n
+
+config DRIVER_BUS_I2C_IMGTEC
+	bool "IMG I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_IPQ806X
+	bool "Qualcomm IPQ806x I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_IPQ40XX
+	bool "QCA IPQ40xx I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_ROCKCHIP
+	bool "Rockchip I2C driver"
+
+config DRIVER_BUS_I2C_MT8173
+        bool "MediaTek MT8173 I2C driver"
+        default n
+
+config DRIVER_BUS_I2C_CYGNUS
+	bool "Cygnus I2C driver"
+	default n
+
+config DRIVER_BUS_I2C_ARMADA38X
+        bool "Marvell Armada38x I2C driver"
+        default n
+
+config DRIVER_BUS_I2C_CROS_EC_TUNNEL
+        bool "Chrome OS EC tunnel I2C driver"
+        depends on DRIVER_EC_CROS
+        default n

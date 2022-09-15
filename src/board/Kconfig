@@ -1,0 +1,127 @@
+##
+## Copyright 2013 Google Inc.  All rights reserved.
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; version 2 of the License.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+
+menu "Board"
+
+config BOARD
+	string "Board name"
+
+config BOARD_DIR
+	string "Board directory"
+	default BOARD
+
+if BOARD_DIR = "auron"
+source src/board/auron/Kconfig
+endif
+if BOARD_DIR = "bayleybay"
+source src/board/bayleybay/Kconfig
+endif
+if BOARD_DIR = "bolt"
+source src/board/bolt/Kconfig
+endif
+if BOARD_DIR = "cheza"
+source src/board/cheza/Kconfig
+endif
+if BOARD_DIR = "cyan"
+source src/board/cyan/Kconfig
+endif
+if BOARD_DIR = "daisy"
+source src/board/daisy/Kconfig
+endif
+if BOARD_DIR = "falco"
+source src/board/falco/Kconfig
+endif
+if BOARD_DIR = "foster"
+source src/board/foster/Kconfig
+endif
+if BOARD_DIR = "gizmo"
+source src/board/gizmo/Kconfig
+endif
+if BOARD_DIR = "glados"
+source src/board/glados/Kconfig
+endif
+if BOARD_DIR = "gru"
+source src/board/gru/Kconfig
+endif
+if BOARD_DIR = "grunt"
+source src/board/grunt/Kconfig
+endif
+if BOARD_DIR = "jecht"
+source src/board/jecht/Kconfig
+endif
+if BOARD_DIR = "kukui"
+source src/board/kukui/Kconfig
+endif
+if BOARD_DIR = "link"
+source src/board/link/Kconfig
+endif
+if BOARD_DIR = "nyan"
+source src/board/nyan/Kconfig
+endif
+if BOARD_DIR = "nyan_big"
+source src/board/nyan_big/Kconfig
+endif
+if BOARD_DIR = "nyan_blaze"
+source src/board/nyan_blaze/Kconfig
+endif
+if BOARD_DIR = "oak"
+source src/board/oak/Kconfig
+endif
+if BOARD_DIR = "panther"
+source src/board/panther/Kconfig
+endif
+if BOARD_DIR = "peach_pit"
+source src/board/peach_pit/Kconfig
+endif
+if BOARD_DIR = "peppy"
+source src/board/peppy/Kconfig
+endif
+if BOARD_DIR = "rambi"
+source src/board/rambi/Kconfig
+endif
+if BOARD_DIR = "rush"
+source src/board/rush/Kconfig
+endif
+if BOARD_DIR = "rush_ryu"
+source src/board/rush_ryu/Kconfig
+endif
+if BOARD_DIR = "samus"
+source src/board/samus/Kconfig
+endif
+if BOARD_DIR = "slippy"
+source src/board/slippy/Kconfig
+endif
+if BOARD_DIR = "smaug"
+source src/board/smaug/Kconfig
+endif
+if BOARD_DIR = "storm"
+source src/board/storm/Kconfig
+endif
+if BOARD_DIR = "cyclone"
+source src/board/cyclone/Kconfig
+endif
+if BOARD_DIR = "strago"
+source src/board/strago/Kconfig
+endif
+if BOARD_DIR = "urara"
+source src/board/urara/Kconfig
+endif
+if BOARD_DIR = "veyron"
+source src/board/veyron/Kconfig
+endif
+if BOARD_DIR = "veyron_rialto"
+source src/board/veyron_rialto/Kconfig
+endif
+if BOARD_DIR = "veyron_shark"
+source src/board/veyron_shark/Kconfig
+endif
+endmenu

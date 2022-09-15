@@ -1,0 +1,83 @@
+##
+## Copyright 2012 Google Inc.  All rights reserved.
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; version 2 of the License.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+
+
+# Options which are passed to the linker script. When making changes, update
+# the list of options in Makefile.inc as well.
+
+config LDSCRIPT_ARCH
+	bool "Architecture specific linker script"
+	default n
+	help
+	  When enabled, the linker script given as argument to the linker is
+	  the architecture specific linker script provided from libpayload.
+	  Otherwise, the default src/image/depthchearge.ldscript is used.
+
+config KERNEL_START
+	hex "Physical address of the region the kernel image is loaded into"
+	default 0x100000
+	help
+	  The start of a region of memory the kernel image is loaded into from
+	  the boot medium (vboot, network, etc.). This image may or may not be
+	  a wrapper around the actual kernel code (e.g. FIT) and may or may not
+	  require further decompression or relocation.
+
+	  ==== Placement guide (also see kernel/Documentation/<arch>/boot*) ====
+	  arm32: Within first 128MB of RAM. Ideally at exactly 32MB. Do not
+	  overlap DMA_COHERENT area (from coreboot memlayout)!
+	  arm64: Anywhere, but leave as much space as possible empty from the
+	  start of RAM (ideally up to 512MB, see KERNEL_FIT_FDT_ADDR help).
+	  x86: Do not change, defaults should work fine.
+
+config KERNEL_SIZE
+	hex "The size of the region the kernel image is loaded into"
+	default 0x08000000 if ARCH_ARM_V7	# kernel ABI limitation
+	default 0x20000000
+	help
+	  The size of the memory region described in KERNEL_START. Note that we
+	  want this to be very generous, to have the option of loading recovery
+	  kernels with large attached initramfs in the future. While the kernel
+	  partition size on the fixed disk is usually much smaller anyway, we
+	  can make the partition on the recovery USB stick as big as we want
+	  later on. Since recovery firmware cannot be updated, this limit needs
+	  to be made sufficiently large in advance.
+	  (NOTE: Pre-2018 devices have significantly smaller limits here.)
+
+config BASE_ADDRESS
+	hex "The address depthcharge is linked to run at"
+	default 0x30000000
+	help
+	  The address that the the depthcharge code and data is linked to.
+
+config HEAP_SIZE
+	hex "The size of the heap in bytes"
+	default 0x200000
+	help
+	  The size of the heap in bytes, minus any padding needed to align it
+	  to a 16 byte boundary.
+
+config STACK_SIZE
+	hex "The size of the stack in bytes"
+	default 0x4000
+	help
+	  The size of the stack in bytes, minus any padding needed to align it
+	  to a 16 byte boundary.
+
+config GBB_COPY_SIZE
+	hex "The size of the area to cache the GBB contents"
+	default 0x100000
+	help
+	  The size of the area the GBB is loaded into during the RO portion of
+	  the boot which is referred to later by vboot in both RO and RW.
+
+
+# End of options passed to the linker script.
